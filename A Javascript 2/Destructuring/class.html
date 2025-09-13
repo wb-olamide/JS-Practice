@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <script>
+      let colors = [
+        "pink",
+        "orange",
+        "blue",
+        "yellow",
+        { name: "sola", age: 30 },
+        "red",
+      ];
+
+      let [firstColor, , thirdColor, ...rem] = colors;
+      console.log(firstColor);
+      console.log(thirdColor);
+      console.log(rem);
+
+      function test([, , , , { name }]) {
+        console.log(name);
+      }
+      test(colors);
+
+      function testtwo([...rest]) {
+        console.log(rest[4].age);
+      }
+      testtwo(colors);
+
+      let arrofalp = ["a", "b", "c", "d", "e"];
+      let myArr = [1, 2, 3, 4, 5, ...arrofalp];
+      console.log(myArr);
+
+      // [first,,,, ...spread()] = myArr
+
+      //   let newOne = [...myArr, ...arrofalp];
+      //   [first, second ,,,] = newOne
+
+    //   console.log(newOne);
+
+      let arrOfObj;
+    </script>
+  </body>
+</html>

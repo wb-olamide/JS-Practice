@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div><h1 class="text-5xl text-center mb-10">The Movie Website</h1></div>
+    <div id="newDiv"></div>
+    <div id="discover-movies" class="grid grid-cols-4 gap-5 ml-5"></div>
+
+    <script>
+      const discoverMovies = document.getElementById("discover-movies");
+      const loadingDiv = document.getElementById("newDiv");
+
+      let token =
+        "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YjVjMDlhMGQ0NjU4YzVlN2M2YWE4YTY3YjEyOWE2MCIsIm5iZiI6MTc1NzQ1NTYwOC41NDIsInN1YiI6IjY4YzBhNGY4ZTViMGM2ZWI3ZDk0ODk2MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.b9ClJy_rTZ9hlbsRY8A2zoaDylnKDTTveWQoWp5o8Ys";
+      const baseUrl = "https://api.themoviedb.org/3";
+      const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
+      const options = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      let getDiscoverMovies = async () => {
+        loadingDiv.innerHTML = `<div class = "text-4xl font-medium text-center mt-[45vh]">Loading...</p>`;
+        try {
+          const result = await fetch(`${baseUrl}/discover/movie`, options);
+          const data = await result.json();
+          console.log(data.results);
+          loadingDiv.innerHTML = "";
+          data.results.forEach((movie) => {
+            discoverMovies.innerHTML += `
+                <div class = "mb-4 w-[100%] space-y-3">
+             <div class = "w-[95%] "><img " class = "cursor-pointer w-full rounded-xl object-cover" src="${imgBaseUrl}${movie.backdrop_path}" alt="img"></div>
+                <div class = "space-y-1 " ><h1  "  class = "cursor-pointer w-full text-xl font-medium">Title: ${movie.title}</h1>
+                <p class= "text-gray-400" >${movie.release_date}</p>
+                <p class = "overflow-hidden h-[50px] w-[90%]">${movie.overview}</p>
+                <a href= "./singlemovie.html?id=${movie.id}"> View Product </a>
+            </div>
+        </div>
+            `;
+          });
+        } catch (error) {
+          console.log(error);
+        } finally {
+          console.log("Done!");
+        }
+      };
+      getDiscoverMovies();
+
+      //   const movieById = async (id) => {
+      //     try {
+      //       console.log("Hell");
+      //       const movieRes = await fetch(`${baseUrl}/movie/${id}`, options);
+      //       const movieData = await movieRes.json();
+      //       window.location.href = "./movie.html";
+      //       localStorage.setItem("saveDisplay", JSON.stringify(movieData));
+      //     } catch (error) {
+      //       console.log(error);
+      //     } finally {
+      //       console.log("Redirecting");
+      //     }
+      //   };
+
+      //     movieById(755898);
+    </script>
+  </body>
+</html>

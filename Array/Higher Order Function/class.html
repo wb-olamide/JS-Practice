@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Higher order function
+    foreach
+    filter
+    map 
+    find -->
+    <div>
+      <input type="text" id="diss" oninput="getinn()"  />
+    </div>
+    <script>
+      let diss = document.getElementById("diss");
+      let studentDetails = [
+        { name: "sola", age: 12, gender: "male" },
+        { name: "ola", age: 20, gender: "male" },
+        { name: "grace", age: 10, gender: "female" },
+        { name: "ayo", age: 8, gender: "male" },
+      ];
+
+      //   Filter
+      function getinn() {
+        let studentBasedOnAge = studentDetails.filter(
+          (student, index, array) => {
+            return student.name.includes(diss.value);
+          }
+        );
+        console.log(studentBasedOnAge);
+      }
+
+      
+      //  let studentBasedOnAge = studentDetails.filter((student, index, array) => {
+      //   return student.name.includes(diss.value);
+      // });
+      // console.log(studentBasedOnAge);
+
+      // MAP
+      let result = studentDetails.map((student, index, array) => {
+        return student.name;
+      });
+      console.log(result);
+
+      //   Find
+      let findSudent = studentDetails.find((Element) => {
+        return Element.name == "ayo";
+      });
+      console.log(findSudent);
+
+      // For each
+      studentDetails.forEach((student, index, array) => {
+        console.log(student.name);
+      });
+    </script>
+  </body>
+</html>

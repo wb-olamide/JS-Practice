@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body>
+    <div class="mt-5 w-[60%] m-auto space-y-5">
+      <div class="text-3xl">
+        <span class="mr-5">Current Time:</span>
+        <span id="currenthr"></span>:<span id="currentmin"></span>:<span
+          id="currentsec"
+        ></span>
+      </div>
+      <div>
+        <h1 class="text-xl">Set Alarm Time...</h1>
+        <input
+          type="text"
+          class="border"
+          placeholder="input hours"
+          id="hours"
+        />
+        <input
+          type="text"
+          class="border"
+          placeholder=" input minutes"
+          id="mins"
+        />
+      </div>
+      <div>
+        <button id="alarm" class="bg-green-800 text-white rounded-xl px-4 py-1">
+          Set Alarm
+        </button>
+        <button id="alarmCl" class="bg-red-800 text-white rounded-xl px-4 py-1">
+          Stop Alarm
+        </button>
+      </div>
+
+      <div class="text-xl">
+        <span>Alarm Time:</span>
+        <span id="alarmhr" class="ml-3 mr-1">0hr</span>:<span
+          id="alarmmins"
+          class="ml-1"
+        >
+          0M</span
+        >
+      </div>
+    </div>
+
+    <script>
+      let currenthr = document.getElementById("currenthr");
+      let currentmin = document.getElementById("currentmin");
+      let currentsec = document.getElementById("currentsec");
+      let alarmhr = document.getElementById("alarmhr");
+      let alarmmins = document.getElementById("alarmmins");
+
+      let hrs = document.getElementById("hours");
+      let mins = document.getElementById("mins");
+      let alarmSong = new Audio(
+        // "./Davido-Ft-Omah-Lay-With-You-(TrendyBeatz.com).mp3"
+        "./Musiliu_Haruna_Ishola_-_Opon_Apala_Musiliu_Haruna_Ishola.mp3"
+      );
+
+      function actualDate() {
+        date = new Date();
+        currenthr.innerHTML = date.getHours();
+        currentmin.innerHTML = date.getMinutes();
+        currentsec.innerHTML = date.getSeconds();
+        // console.log(typeof date.getSeconds());
+      }
+      setInterval(actualDate, 1000);
+
+      let intervalClear;
+      function getAlarm() {
+        intervalClear = setInterval(() => {
+          let getHr = date.getHours();
+          let getMin = date.getMinutes();
+          let getSec = date.getSeconds();
+
+          alarmhr.innerHTML = hrs.value;
+          alarmmins.innerHTML = mins.value;
+          //   console.log(getSec);
+          //   console.log(alarmmins.innerHTML);
+          if (
+            alarmhr.innerHTML == getHr &&
+            alarmmins.innerHTML == getMin &&
+            getSec == 0
+          ) {
+
+            alarmSong.play();
+            // alert("craxyy")
+            // alert(`Alarm for ${getHr} : ${getMin}`);
+          } 
+        }, 1000);
+      }
+
+      function stopAlarm() {
+        clearInterval(intervalClear);
+        alarmSong.pause();
+        alert("Alarm Stopped!");
+      }
+
+      alarm.addEventListener("click", getAlarm);
+      alarmCl.addEventListener("click", stopAlarm);
+
+      //   function saveClock() {
+      //     setInterval(() => {
+      //       date = new Date();
+      //       currenthr.innerHTML = date.getHours();
+      //       currentmin.innerHTML = date.getMinutes();
+      //       currentsec.innerHTML = date.getSeconds();
+      //     //   console.log("Hello");
+      //       console.log(alarmmins.innerHTML);
+      //       console.log(currentmin.innerHTML);
+
+      //       alarmmins.innerText = mins.value;
+      //       if (currentmin.innerHTML == alarmmins.innerText) {
+      //         console.log("Hello");
+      //         alert("jiggy")
+      //       }
+      //     }, 1000);
+      //   }
+      //   function startClock(params) {
+      //     saveClock();
+      //   }
+      //   alarm.addEventListener("click", startClock);
+    </script>
+  </body>
+</html>

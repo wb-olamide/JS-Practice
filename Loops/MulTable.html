@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/src/output.css" /> -->
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div class="mb-20">
+      <span>From:</span>
+      <input
+        id="firstInput"
+        class="border px-2 mr-10"
+        type="text"
+        placeholder="Input From 1 - 12"
+      />
+      <span>To:</span>
+      <input
+        id="secondInput"
+        class="border px-2"
+        type="text"
+        placeholder="Input From 1 - 12"
+      />
+      <button id="btn">Generate</button>
+    </div>
+    <div id="display" class="flex shrink-0">
+      <!-- <p class="border-red-700"></p> -->
+      <!-- <div id="mini"></div> -->
+    </div>
+
+    <script>
+      const displayRes = document.getElementById("display");
+      const firstInput = document.getElementById("firstInput");
+      const secondInput = document.getElementById("secondInput");
+      const genBtn = document.getElementById("btn");
+
+      //   const mini = document.getElementById("mini");
+      function generate() {
+        displayRes.innerText = "";
+        if (
+          firstInput.value < 1 ||
+          firstInput.value > 12 ||
+          secondInput.value < 1 ||
+          secondInput.value > 12
+        ) {
+          alert("you dey whine??");
+        } else {
+          for (
+            let i = Number(firstInput.value);
+            i <= Number(secondInput.value);
+            i++
+          ) {
+            const mini = document.createElement("div");
+            displayRes.appendChild(mini);
+            for (let j = 1; j <= 12; j++) {
+              mini.innerHTML += `<p class="border-red-700 border px-6 py-3" > ${i} * ${j} = ${
+                i * j
+              } </P>`;
+
+              //   console.log(`${i} * ${j}`);
+            }
+          }
+        }
+      }
+      // if ( ) {
+
+      // }
+
+      genBtn.addEventListener("click", generate);
+    </script>
+  </body>
+</html>

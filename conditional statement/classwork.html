@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <!-- <input id="inp" type="text border-black " placeholder="AhI" />
+    <button class="p-2">Change Color</button>
+    <div
+      id="display"
+      class="h-[200px] w-[200px] border-[4px] bg-green-500 border-black border"
+    >
+      Hello
+    </div> -->
+
+    <div class="mb-3">
+      <input id="inp" type="text" />
+      <button onclick="colorchange()">Change Colour</button>
+    </div>
+    <div id="display" class="w-[200px] h-[200px] bg-blue border-2 border"></div>
+
+    <script>
+      let getColor = document.getElementById("inp");
+      let getDisplay = document.getElementById("display");
+
+      getDisplay.style.backgroundColor = "orange";
+
+      function colorchange() {
+        // getDisplay.innerText = getColor.value;
+
+        if (getColor.value == 1) {
+          getDisplay.style.backgroundColor = "blue";
+        } else if (getColor.value == 2) {
+          getDisplay.style.backgroundColor = "red";
+        } else if (getColor.value == 3) {
+          getDisplay.style.backgroundColor = "yellow";
+        } else if (getColor.value == 4) {
+          getDisplay.style.backgroundColor = "purple";
+        } else if (getColor.value == 5) {
+          getDisplay.style.backgroundColor = "green";
+        } else if (getColor.value == 6) {
+          getDisplay.style.backgroundColor = "gray";
+        } else {
+          getDisplay.style.backgroundColor = "orange";
+        }
+      }
+    </script>
+  </body>
+</html>

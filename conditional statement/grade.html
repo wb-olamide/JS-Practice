@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div>
+      <input
+        id="inp"
+        class="border-black border-2"
+        type="text"
+        placeholder="input CGPA"
+      />
+      <button onclick="getGrade()" class="bg-gray-200 px-2 py-1">
+        Get Grade
+      </button>
+      <div id="display"></div>
+    </div>
+
+    <script>
+      const getInp = document.getElementById("inp");
+      const getDisplay = document.getElementById("display");
+
+      //   getDisplay
+
+      function getGrade() {
+        if (getInp.value <= 0) {
+          getDisplay.innerText = "Invalid!!";
+        } else if (getInp.value <= 1.49) {
+          getDisplay.innerText = "Drop Out!!";
+        } else if (getInp.value <= 2.49) {
+          getDisplay.innerText = "Third Class";
+        } else if (getInp.value <= 3.49) {
+          getDisplay.innerText = "Second Class Lower";
+        } else if (getInp.value <= 4.49) {
+          getDisplay.innerText = "Second Class Upper";
+        } else if (getInp.value <= 5) {
+          getDisplay.innerText = "First Class";
+        } else {
+          getDisplay.innerText = "Invalid Class";
+        }
+      }
+
+      //   alert getInp
+    </script>
+  </body>
+</html>

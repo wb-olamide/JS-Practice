@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@utility inpHov {
+  @apply focus:border-blue-600 focus:border-2 hover:border-blue-600 hover:border-2 active:border-blue-600 active:border;
+}

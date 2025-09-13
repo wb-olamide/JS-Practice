@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUDENT INFORMATION TABLE</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700 w-[60%] lg:w-[40%] m-auto">
+    <div class="mb-5">
+      <h1 class="text-4xl font-medium text-center">
+        STUDENT INFORMATION TABLE
+      </h1>
+    </div>
+    <div class="w-[70%] m-auto space-y-4 mb-10">
+      <div class="space-y-3">
+        <div class="space-y-3">
+          <p>Name:</p>
+          <input
+            type="text"
+            placeholder="Student Name"
+            class="border w-[100%] h-[40px] px-2"
+            id="nameInput"
+          />
+        </div>
+        <div class="space-y-3">
+          <p>Phone Number:</p>
+          <input
+            type="text"
+            placeholder="Student Number"
+            class="border w-[100%] h-[40px] px-2"
+            id="phoneInput"
+          />
+        </div>
+      </div>
+      <div class="border-2 bg-gray-600 w-[100%] font-medium text-center">
+        <button class="w-[100%] py-3 cursor-pointer" id="addBtn">Add</button>
+      </div>
+      <div class="space-y-3">
+        <p>Search:</p>
+        <input
+          type="text"
+          placeholder="Search Student"
+          class="border w-[100%] h-[40px] px-2"
+          id="searchInput"
+          oninput="searchBar()"
+        />
+      </div>
+    </div>
+
+    <div>
+      <table
+        class="border-spacing-y-2 table-auto border-separate w-[80%] m-auto"
+      >
+        <thead>
+          <tr class="font-bold text-lg">
+            <td class="px-8">S/N</td>
+            <td class="px-8">Name</td>
+            <td class="px-8">Phone Number</td>
+            <td class="px-8">Delete</td>
+          </tr>
+        </thead>
+        <tbody id="detailsDisplay"></tbody>
+      </table>
+    </div>
+
+    <script src="./studentinfo.js"></script>
+
+    
+  </body>
+</html>

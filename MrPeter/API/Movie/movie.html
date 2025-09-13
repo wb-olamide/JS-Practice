@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Movie Data</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div>
+      <h1 class="text-4xl font-medium text-center">Individual Movie List</h1>
+    </div>
+    <div
+      id="movieDataDisplay"
+      class="bg-[url(ttps://image.tmdb.org/t/p/w500/iZLqwEwUViJdSkGVjePGhxYzbDb.jpg)] bg-gray-500 mt-20 p-15 bg-no-repeat bg-cover"
+    ></div>
+  </body>
+  <script>
+    const movieDataDisplay = document.getElementById("movieDataDisplay");
+    const movieObj = JSON.parse(localStorage.getItem("saveDisplay"));
+    const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
+
+    console.log(movieObj);
+
+    movieDataDisplay.innerHTML = `
+    <div class="w-[90%] m-auto flex gap-10 ">
+        <div class=" rounded-xl"><img class = "w-full rounded-xl"  src="${imgBaseUrl}${movieObj.poster_path}" alt="" /></div>
+        <div class="flex-col space-y-4">
+          <div>
+            <h1 class="text-4xl font-bold">${movieObj.title} <span class="text-3xl">(2025)</span>
+            </h1> 
+            <span>${movieObj.release_date} (${movieObj.origin_country})</span> . <span>${movieObj.genres[0].name} , ${movieObj.genres[1].name}</span>.<span></span>
+          </div>
+          <div class = "mt-5" >
+            <p>userscore</p>
+          </div>
+          <div>icons</div>
+         
+          <div class="space-y-2">
+            <h1 class="text-xl font-medium">Overview</h1>
+            <p>${movieObj.overview}</p>
+          </div>
+          <div><h1 class = "text-xl font-bold">Production Companies</h1>
+            <p>${movieObj.production_companies[0].name} </P>
+            </div>
+        </div>
+      </div>
+    `;
+  </script>
+</html>

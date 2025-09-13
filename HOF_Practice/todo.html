@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do-list</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <div class="m-auto w-[40%]">
+      <div class="space-y-5">
+        <div><h1 class="text-4xl font-bold text-center">TO-DO-LIST</h1></div>
+        <div>
+          <input
+            id="inputText"
+            type="text"
+            placeholder="Input text"
+            class="border w-[60%] h-[45px] px-2 mr-5"
+          />
+          <button
+            id="addBtn"
+            class="bg-green-700 rounded-xl px-3 py-1 font-medium shadow-sm"
+          >
+            Add To-Do
+          </button>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none"
+          >
+            <svg
+              class="w-4 h-4 text-gray-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 20"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              />
+            </svg>
+          </div>
+          <input
+            id="search"
+            type="text"
+            placeholder="Search To-Do"
+            class="border w-[60%] rounded-xl h-[45px] ps-10"
+            oninput="searchItems()"
+          />
+        </div>
+        <!-- <div class="relative mt-1">
+            <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                </svg>
+            </div>
+            <input type="text" id="table-search" class="block py-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80  focus:ring-blue-500 focus:border-blue-500" placeholder="Search for items">
+        </div> -->
+      </div>
+
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-10">
+        <table class="w-full text-sm text-left rtl:text-right">
+          <thead class="text-xs uppercase">
+            <tr>
+              <th class="px-6 py-3">S/N</th>
+              <th class="px-6 py-3">Task</th>
+              <th class="px-2 py-3">Action</th>
+            </tr>
+          </thead>
+          <tbody id="display"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      let inputText = document.getElementById("inputText");
+      let displayL = document.getElementById("display");
+      let todoArray = [];
+
+      addBtn.addEventListener("click", () => {
+        let capsTask =
+          inputText.value.charAt(0).toUpperCase() + inputText.value.slice(1);
+        console.log(capsTask);
+
+        todoArray.push({
+          task: capsTask,
+          delete: "Delete",
+        });
+        displayList();
+        // console.log(todoArray);
+      });
+
+      function displayList() {
+        displayL.innerHTML = "";
+
+        todoArray.forEach((list, i) => {
+          let tr = document.createElement("tr");
+
+          tr.innerHTML = `
+              <td class="px-6 py-4">${i + 1}</td>
+              <td class="px-6 py-4">${list.task}</td>
+              <button onclick = "deleteIt(${i})" class="px-2 ml-1 py-2 bg-red-700 rounded-xl">${
+            list.delete
+          }</button>
+        `;
+
+          //   console.log(tr);
+
+          displayL.appendChild(tr);
+        });
+      }
+
+      function deleteIt(del) {
+        todoArray.splice(del, 1);
+        displayList();
+      }
+      let filteredArray;
+      function searchItems() {
+        let searchList = document.getElementById("search");
+        let seacrchcaps = searchList.value.toLowerCase();
+        filteredArray = todoArray.filter((num) => {
+          return num.task.toLowerCase().includes(seacrchcaps);
+        });
+        displayL.innerHTML = "";
+        filteredArray.forEach((num, i) => {
+          let tr = document.createElement("tr");
+          tr.innerHTML = `
+              <td class="px-6 py-4">${i + 1}</td>
+              <td class="px-6 py-4">${num.task}</td>
+              <button onclick = "deleteSearch(${
+                num.task
+              })" class="px-2 ml-1 py-2 bg-red-700 rounded-xl">${
+            num.delete
+          }</button>
+        `;
+          displayL.appendChild(tr);
+        });
+      }
+
+      function deleteSearch(name) {
+        console.log(name);
+
+        // console.log(filteredArray);
+
+        // todoArray.splice();
+
+        let found = todoArray.findIndex((search) => {
+          search.name == name;
+        });
+        // found.remove();
+        console.log(found);
+      }
+    </script>
+  </body>
+</html>

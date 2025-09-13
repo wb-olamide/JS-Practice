@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div>
+      <input type="text" placeholder="Input Number" />
+      <div id="display"></div>
+      <button onclick="countdown()" id="countbtn" class="bg-gray-400">
+        countdown
+      </button>
+    </div>
+
+    <script>
+      let inp = document.querySelector("input");
+      let displ = document.getElementById("display");
+      let count;
+      console.log(count);
+
+      // countbtn.addEventListener("click", countdown);
+      // setInterval(countdown, 1000);
+      // setInterval(countdown, 1000);
+
+      function countdown() {
+        count = Number(inp.value);
+        count--;
+
+        displ.innerHTML = count;
+        console.log(count);
+      }
+
+      // setInterval(() => {
+      //   count = inp.value;
+      //   count--;
+
+      //   displ.innerHTML = count;
+      // }, 1000);
+
+      //  count.addEventListener("click", () => {
+      //     // displ.innerHTML = inp.value;
+      //     let x = inp.value;
+      //     for (let y = x; y > 0; y--) {
+      //       // x--;
+
+      //       setInterval(function () {
+      //         //   displ.innerHTML = x--;
+      //       //   displ.innerHTML = y;
+      //       }, 1000);
+      //     }
+      //   })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .game-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .money-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .press-button {
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            border: none;
+            color: #333;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .press-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+        
+        .press-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        @keyframes moneyPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .money-pop {
+            animation: moneyPop 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="money-display" id="moneyDisplay">$1</div>
+        <button class="press-button" onclick="pressMoney()">Press for Money!</button>
+        <div class="message" id="message">Click the button to earn money!</div>
+    </div>
+    
+<script>
+        let money = 1;
+        let timer;
+
+        function pressMoney() {
+            money++;
+            console.log(`You now have $${money}`);
+            
+            // Update the display
+            const moneyDisplay = document.getElementById('moneyDisplay');
+            const message = document.getElementById('message');
+            
+            moneyDisplay.textContent = `$${money}`;
+            message.textContent = `You now have $${money}!`;
+            
+            // Add animation effect
+            moneyDisplay.classList.add('money-pop');
+            setTimeout(() => {
+                moneyDisplay.classList.remove('money-pop');
+            }, 300);
+        }
+
+        // Optional: Add keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (event.key.toLowerCase() === ' ' || event.key === 'Enter') {
+                pressMoney();
+            }
+        });
+
+        // Optional: Uncomment below for auto-reminder messages
+        // timer = setInterval(() => {
+        //     console.log(`Press money! You currently have $${money}`);
+        // }, 5000);
+    </script>
+    <!-- <script src="./money.js"></script> -->
+</body>
+</html>

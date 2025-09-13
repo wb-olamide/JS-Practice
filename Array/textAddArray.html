@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-600">
+    <div>
+      <input
+        type="text"
+        placeholder="type here"
+        class="px-2 w-[300px] h-[50px] border mt-2"
+      />
+      <button
+        id="btn"
+        class="bg-amber-600 rounded-xl px-3 py-2 text-lg text-white"
+      >
+        Add text to front
+      </button>
+      <button
+        id="btnback"
+        onclick="removeIt()"
+        class="bg-red-600 rounded-xl px-3 py-2 text-lg text-white"
+      >
+        Remove text from front
+      </button>
+      <div id="disp">
+        <ol class="list-decimal list-inside" id="display"></ol>
+      </div>
+    </div>
+
+    <script>
+      const displayText = document.querySelector("#display");
+      const frontBtn = document.querySelector("#btn");
+      const inputAll = document.querySelector("input");
+      const textArray = Array(displayText.innerHTML);
+      const backbtn = document.querySelector("#btnback");
+      let Num = textArray.length;
+
+      // console.log(textArray);
+
+      frontBtn.addEventListener("click", (Num) => {
+        textArray.push(
+          `<li> ${inputAll.value}<button onclick="removeIt(indexNum)" class= " px-4 ml-5 my-1 bg-gray-500 rounded-xl py-2" > Delete </button></li>`
+        );
+        // console.log(textArray);
+        displayText.innerHTML = textArray.join(" ");
+        // console.log(textArray.length);
+
+        // displayText.innerHTML += `<li> ${inputAll.value} </li>`;
+        inputAll.value = "";
+        // console.log(indexNum);
+        console.log(Num);
+      });
+
+      // backbtn.addEventListener("click", () => {
+      //   // textArray.shift(`<li> ${inputAll.value}</li>`);
+      //   textArray.shift(inputAll.value);
+      //   displayText.innerHTML = textArray.join(" ");
+      //   inputAll.value = " ";
+      // });
+
+      function removeIt(indexNum) {
+        console.log(textArray.length);
+
+        let lengthNum = textArray[indexNum];
+        // console.log(indexNum);
+
+        textArray.splice(indexNum, 1);
+        displayText.innerHTML = textArray.join(" ");
+        // console.log(textArray);
+        console.log(indexNum);
+      }
+      // console.log(textArray);
+      // console.log(textArray.length);
+
+      // console.log(displayText);
+
+      // textArray = inputAll.value;
+      // displayText.innerHTML += inputAll.value;
+      // let textArray = Array(displayText.innerHTML);
+      // textArray.unshift(input.value);
+      // displayText.innerHTML = textArray.join(" ");
+      // console.log(textArray);
+    </script>
+  </body>
+</html>

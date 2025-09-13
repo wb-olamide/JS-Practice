@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div>
+      <input
+        type="text"
+        placeholder="type here"
+        class="px-2 w-[300px] h-[50px] border mt-2"
+      />
+      <button
+        id="btn"
+        class="bg-amber-600 rounded-xl px-3 py-2 text-lg text-white"
+      >
+        Add text
+      </button>
+      <!-- <button
+        id="btnback"
+        onclick="removeIt()"
+        class="bg-red-600 rounded-xl px-3 py-2 text-lg text-white"
+      >
+        Remove text from front
+      </button> -->
+      <div id="disp">
+        <ol class="list-decimal list-inside" id="display"></ol>
+      </div>
+    </div>
+
+    <script>
+      const displayText = document.querySelector("#display");
+      const frontBtn = document.querySelector("#btn");
+      const inputAll = document.querySelector("input");
+      const backbtn = document.querySelector("#btnback");
+
+      frontBtn.addEventListener("click", () => {
+        displayText.innerHTML += `
+      <li>${inputAll.value} <button onclick="removeIt()" class = "bg-gray-500 px-5 py-1 rounded-xl m-2">Remove</button> </li>
+      `;
+        inputAll.value = " ";
+      });
+
+      function removeIt() {
+        event.target.closest("li").remove();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <script>
+      let numbers = [1, 3, 5, 7, 8, 1, 8, 0, 1, 5];
+      let checkOne = 1;
+      let checkFive = 5;
+      //   let result = numbers.reduce((acc, curV) => acc + curV, 0);
+      //   console.log(result);
+
+      let numberofTimes = numbers.reduce((save, num) => {
+        if (num === checkOne) {
+          return save + 1;
+        } else {
+          return save;
+        }
+      }, 0);
+      console.log(`Number one occurs ${numberofTimes} times.`);
+
+      let numberfive = numbers.reduce((save, num) => {
+        if (num === checkFive) {
+          return save + 1;
+        } else {
+          return save;
+        }
+      }, 0);
+      console.log(`Number five occurs ${numberfive} times.`);
+
+      let highestValue = numbers.reduce((save, number) => {
+        if (number > save) {
+          return number;
+        } else {
+          return save;
+        }
+      }, 0);
+      console.log(`${highestValue} is the highest value.`);
+    </script>
+  </body>
+</html>

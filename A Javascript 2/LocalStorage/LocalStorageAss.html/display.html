@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>display Local Storage</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <div>
+      <h1 class="text-4xl font-bold">STUDENT SAVED LIST</h1>
+    </div>
+    <div>
+      <ol class="list-decimal list-inside"></ol>
+    </div>
+
+    <script>
+      let displayres = document.querySelector("ol");
+      let result = JSON.parse(localStorage.getItem("saveDetails"));
+      console.log(result);
+
+      function display() {
+        displayres.innerHTML = " ";
+        result.forEach((student, index) => {
+          let studentList = document.createElement("li");
+          studentList.className = "px-5 py-2";
+          studentList.innerHTML = `${student.name} - ${student.dept} - ${student.school} <button onClick= "deleteList(${index})" class="rounded-lg mx-9 px-4 text-white py-1 bg-red-800">Delete</button>
+    `;
+          displayres.appendChild(studentList);
+          console.log(studentList);
+        });
+      }
+      display();
+      console.log(displayres);
+      function deleteList(del) {
+        result.splice(del, 1);
+        display();
+        console.log(result);
+
+        localStorage.setItem("saveDetails", JSON.stringify(result));
+        alert("Student Rusticated!!!");
+      }
+
+      display();
+    </script>
+  </body>
+</html>

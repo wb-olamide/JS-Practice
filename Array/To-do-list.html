@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-500">
+    <div class="w-[40%] m-auto mt-40 rounded-xl bg-white p-5">
+      <h1 class="font-bold text-2xl text-center mb-5">To-Do-List</h1>
+      <div class="flex gap-5">
+        <input
+          type="text"
+          placeholder="Add a text"
+          class="border px-2 h-[40px] w-[70%]"
+        />
+        <button id="btn" class="px-2 py-2 bg-gray-500 mb-5 text-white">
+          Add
+        </button>
+      </div>
+      <ol id="display" class="list-decimal list-inside rounded-xl"></ol>
+    </div>
+
+    <script>
+      let arrayitems = [];
+      const listdisplay = document.querySelector("#display");
+      const getInput = document.querySelector("input");
+
+      btn.addEventListener("click", () => {
+        // listdisplay.innerHTML = arrayitems;
+        arrayitems.push(getInput.value);
+
+        listFunction();
+        console.log(arrayitems);
+      });
+
+      function listFunction() {
+        listdisplay.innerHTML = " ";
+
+        arrayitems.forEach((value, ind) => {
+          const newlist = document.createElement("li");
+          newlist.textContent = value;
+          newlist.className = "px-2 text-xl py-1 mb-2 relative ";
+
+          const butt = document.createElement("button");
+          butt.textContent = "X";
+          butt.className =
+            "bg-gray-500 text-white ml-5 px-4 py-1 absolute top-0 right-25";
+          newlist.appendChild(butt);
+
+          listdisplay.appendChild(newlist);
+
+          //   butt.addEventListener("click", (index) => {
+          //     arrayitems.splice(index, 1);
+          //     listFunction();
+          //   });
+          butt.onclick = (ind) => {
+            removeText(ind);
+          };
+        });
+
+        function removeText(index) {
+          arrayitems.splice(index, 1);
+          listFunction();
+        }
+      }
+    </script>
+  </body>
+</html>

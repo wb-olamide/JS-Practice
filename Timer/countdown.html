@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="bg-gray-600">
+    <input type="number" id="numInp" class="border" />
+    <!-- <div id="display"></div> -->
+    <button onclick="runcount()">Start</button>
+
+    <script>
+      //   onmousedown = "this.value = '' ";
+      //   onclick =
+      //     "countvar = setInterval(() => (countvar.value > 0) ? numCount.value--: clearInterval(countvar), 1000);";
+
+      //   let numIn = document.getElementById("numImp");
+      //   let disp = document.getElementById("display")
+
+      //   numInp = "30"
+      console.log(Number(numInp.value));
+
+      let counter;
+      function runcount() {
+        counter = setInterval(() => {
+          if (numInp.value > 0) {
+            numInp.value--;
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

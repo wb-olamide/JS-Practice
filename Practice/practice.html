@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div id="history">Hello</div>
+      <div
+        id="display"
+        class="w-[20%] h-[30px] text-5xl mb-10 flex justify-end text"
+      >
+        0
+      </div>
+    </div>
+    <div>
+      <div
+        class="w-[20%] grid grid-cols-4 p-4 bg-gray-400 gap-2 text-white text-center"
+      >
+        <div
+          onclick="numdisplay()"
+          id="number"
+          class="rounded-xl bg-black px-4 py-4 cursor-pointer"
+        >
+          7
+        </div>
+        <div
+          onclick="numdisplay()"
+          id="number"
+          class="rounded-xl bg-black px-4 py-4"
+        >
+          8
+        </div>
+        <div onclick="textLenght()" id="backspace" class="rounded-xl bg-black px-4 py-4">C</div>
+        <div onclick="clearText()" class="rounded-xl bg-black px-4 py-4">
+          CE
+        </div>
+      </div>
+    </div>
+
+    <script src="./practice.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <!-- <div id="display" class="bg-red-700 p-4"></div> -->
+    <div>
+      <div
+        id="first"
+        onclick="switchit()"
+        class="p-5 bg-green-700 w-20 text-center text-white border m-5"
+      >
+        Paul
+      </div>
+      <div
+        onclick="switchit()"
+        id="second"
+        class="p-5 w-25 bg-amber-800 text-center text-white border m-5"
+      >
+        Peter
+      </div>
+    </div>
+
+    <!-- <button onclick=" switchit ()">Click</button> -->
+
+    <script>
+      const first = document.getElementById("first");
+      const second = document.getElementById("second");
+      // const display = document.getElementById("display");
+      second.style.display = "none";
+      //   second.style.display = "block";
+      let change = true;
+      //   let changeback = false;
+
+      function switchit() {
+        if (change == true) {
+          //   display.appendChild(first);
+          second.style.display = "block";
+          first.style.display = "none";
+          change = false;
+
+          //   change == false;
+        } else if (change == false) {
+          second.style.display = "none";
+          first.style.display = "block";
+          change = true;
+        }
+
+        // if (changeback == true) {
+        //   //   display.appendChild(first);
+        //   second.style.display = "none";
+        //   first.style.display = "block";
+        //   //   change == false;
+        // }
+        // else if (change == false) {
+        //   display.appendChild(second);
+        //   second.style.display = "block";
+        // }
+        // display.appendChild(first);
+
+        console.log(display);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <input type="text" id="keyName" class="border" />
+    <input type="text" id="userName" class="border" />
+    <button id="btn" class="bg-gray-500 py-1 px-3 rounded-xl">Add</button>
+    <div id="display">
+      <table>
+        <tbody>
+          <tr>
+            <th class="px-6">S/N</th>
+            <th class="px-6">Network</th>
+            <th class="px-6">Amount</th>
+            <th class="px-6">Pin</th>
+            <th class="px-6">Recharge Code</th>
+          </tr>
+        </tbody>
+        <tbody id="tbody">
+          <!-- <tr>
+            <td>ejd</td>
+            <td>djsd</td>
+            <td>jsj</td>
+            <td>jsdj</td>
+            <td>jdjsd</td>
+          </tr>
+          <tr>
+            <td>ejd</td>
+            <td>djsd</td>
+            <td>jsj</td>
+            <td>jsdj</td>
+            <td>jdjsd</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      const display = document.querySelector("#display");
+      // btn.addEventListener("click", () => {
+      // let myObj = {};
+      // let keyInp = document.getElementById("keyName").value;
+      // let valueInp = document.getElementById("userName").value;
+
+      //   myObj[keyInp] = valueInp;
+      //   myObj.name = valueInp;
+
+      //   console.log(myObj);
+      //   display.innerHTML = myObj;
+      // });
+      let keyInp = document.getElementById("keyName");
+      let valueInp = document.getElementById("userName");
+
+      let rechargeArray = [];
+      // let rechargeObject = {};
+      btn.addEventListener("click", () => {
+        // name = keyInp.value;
+        // age = valueInp.value;
+        
+
+        let idValue = rechargeArray.length + 1;
+
+        rechargeArray.push({
+          name: keyInp.value,
+          age: valueInp.value,
+          id: idValue,
+          recharge: `*123*${valueInp.value}#`,
+        });
+        console.log(idValue);
+
+        tableFunc();
+
+        // console.log(rechargeObject);
+        console.log(rechargeArray);
+      });
+      // console.log(rechargeObject);
+      // console.log(rechargeArray);
+
+      const tableMain = document.querySelector("#tbody");
+
+      function tableFunc() {
+        // const tableIn = document.createElement("tbody");
+        // tableMain.appendChild(tableIn);
+        // console.log(tableIn);
+
+        tableMain.innerText = "";
+
+        // if (tableclaer == false) {
+        //   table.innerText = "";
+        // }
+
+        // let table = document.createElement("table");
+        // display.appendChild(table);
+        // let tbody = document.createElement("tbody");
+        // table.appendChild(tbody);
+        // let trh = document.createElement("tr");
+        // tbody.appendChild(trh);
+        // let thhsn = document.createElement("th");
+        // thhsn.textContent = "S/N";
+        // let thhnet = document.createElement("th");
+        // thhnet.textContent = "Network";
+
+        // let thham = document.createElement("th");
+        // thham.textContent = "Amount";
+
+        // trh.appendChild(thhsn);
+
+        // trh.appendChild(thhnet);
+        // trh.appendChild(thham);
+        // tableclear = false;
+
+        // rechargeObject = {};
+        // rechargeArray = " ";
+        // let tr;
+        // tr = " ";
+
+        rechargeArray.forEach((value, index) => {
+          tr = document.createElement("tr");
+
+          let tdserial = document.createElement("td");
+          tdserial.innerText = value.id;
+          tr.appendChild(tdserial);
+
+          let tdNumber = document.createElement("td");
+          tdNumber.innerText = value.age;
+          tr.appendChild(tdNumber);
+          let tdNetwork = document.createElement("td");
+          tdNetwork.innerText = value.name;
+          tr.appendChild(tdNetwork);
+
+          let tdAmount = document.createElement("td");
+          tdAmount.innerText = value.recharge;
+          tr.appendChild(tdAmount);
+          // console.log(value);
+
+          tableMain.appendChild(tr);
+
+          // console.log(tr);
+          // console.log(tableMain);
+
+          // let tdPin = document.createElement("td");
+        });
+      }
+
+      // myArr = [1, 2, 3];
+
+      // myArr.forEach((item, index, array) => {
+      //   console.log(index);
+      // });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Input</title>
+  </head>
+  <body>
+    <div>
+      <input id="inp" type="text" placeholder="type here ..." />
+      <button id="btn">Add Text</button>
+      <div id="display">ADE A+BAYO ADE</div>
+    </div>
+
+    <script>
+        const displayText = document.querySelector("#display");
+        const getInp = document.querySelector("input");
+        const disBtn = document.querySelector("#btn");
+    //   let dissa =  displayText.innerHTML.replaceAll("ADE", "BOLU");
+
+        // console.log(dissa);
+
+        //   let displayArray = Array(displayText.innerHTML);
+
+        disBtn.addEventListener("click", () => {
+          // displayText.innerHTML = getInp.value;
+          let displayArray = Array(displayText.innerHTML);
+          displayArray.unshift(getInp.value);
+
+          // displayArray.replace
+          dissa = String(displayArray);
+          displayText.innerHTML = dissa.replaceAll(",", " ");
+
+          // displayText.innerHTML = displayArray;
+          console.log(displayText.innerHTML);
+          console.log(displayArray);
+
+          // console.log("ade");
+        });
+
+
+
+
+
+//         <script>
+// const fruits = ["Banana", "Orange", "Apple"];
+// document.getElementById("demo").innerHTML = fruits;
+
+// function myFunction() {
+//   fruits.unshift("Lemon");
+//   document.getElementById("demo").innerHTML = fruits.join(" ");
+// }
+// </script>
+    </script>
+  </body>
+</html>

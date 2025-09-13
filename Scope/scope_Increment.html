@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <style>
+      #decree:active {
+        transform: scale(0.9);
+        /* transition: all ease-in-out 300ms; */
+        /* animation: decr 500ms ease-in-out; */
+        /* transition: all 500ms ease-in-out; */
+      }
+      #incr:active {
+        transform: scale(1.1);
+        /* transition: all ease-in-out 300ms; */
+        /* animation: incr 500ms ease-in-out; */
+        /* transition: all 500ms ease-in-out; */
+      }
+      /* #decree:hover {
+        
+      } */
+
+      /* @keyframes decr {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes incr {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="w-[300px] border-4 border p-3 rounded-xl m-auto h-[200px]">
+      <div id="display" class="h-[30px]">0</div>
+      <button
+        id="decree"
+        onclick="decre()"
+        class="bg-red-800 text-white rounded-lg px-4 py-2 mr-2"
+      >
+        Decrement</button
+      ><button
+        id="incr"
+        onclick="incre()"
+        class="bg-green-800 text-white rounded-lg px-4 py-2"
+      >
+        Increment
+      </button>
+      <div class="mt-5">
+        <div>
+          <span>Clicks on Increment:</span>
+          <span id="incClick">0</span>
+        </div>
+        <span>Clicks on Decrement:</span>
+        <span id="deClick">0</span>
+      </div>
+    </div>
+
+    <script src="./scope.js">
+      //   // global scope
+
+      //   let myName = "Gloria";
+      //   console.log(myName);
+
+      //   function checkName() {
+      //     // Local Variable
+      //     let myName = "Ayomide";
+      //     console.log(myName);
+      //   }
+    </script>
+  </body>
+</html>

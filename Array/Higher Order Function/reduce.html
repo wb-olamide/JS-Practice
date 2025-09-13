@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce</title>
+  </head>
+  <body>
+    <script>
+      let numbers = [1, 3, 5, 7, 8, 1, 8, 0, , 5];
+      let result = numbers.reduce((acc, curV) => acc + curV, 0);
+      console.log(result);
+    </script>
+  </body>
+</html>

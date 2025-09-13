@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700 w-[70%] m-auto mt-10">
+    <div id="display"></div>
+    <script>
+      let schoolSystem = [
+        {
+          id: 1,
+          name: "Sunrise Primary School",
+          level: "Primary",
+          location: "Lagos",
+          principal: { name: "Mrs. Johnson", experience: 12 },
+          teachers: [
+            { name: "Mr. Ade", subject: "Math", yearsOfExp: 5 },
+            { name: "Mrs. Grace", subject: "English", yearsOfExp: 8 },
+          ],
+          students: [
+            { name: "Tola", age: 10, grade: "Primary 4" },
+            { name: "Chinedu", age: 9, grade: "Primary 3" },
+          ],
+          subjects: ["Math", "English", "Science", "Art"],
+        },
+        {
+          id: 2,
+          name: "Bright Future High School",
+          level: "Secondary",
+          location: "Abuja",
+          principal: { name: "Dr. Musa", experience: 18 },
+          teachers: [
+            { name: "Mr. Okoro", subject: "Biology", yearsOfExp: 10 },
+            { name: "Miss Janet", subject: "Chemistry", yearsOfExp: 7 },
+          ],
+          students: [
+            { name: "Ayo", age: 15, grade: "SS2" },
+            { name: "Fatima", age: 16, grade: "SS3" },
+          ],
+          subjects: [
+            "Math",
+            "English",
+            "Biology",
+            "Chemistry",
+            "Physics",
+            "Economics",
+          ],
+        },
+        {
+          id: 3,
+          name: "TechVille College",
+          level: "Tertiary",
+          location: "Ibadan",
+          principal: { name: "Prof. Williams", experience: 25 },
+          departments: [
+            {
+              name: "Computer Science",
+              head: "Dr. Olu",
+              courses: ["Algorithms", "Data Structures", "Web Development"],
+            },
+            {
+              name: "Engineering",
+              head: "Dr. Bello",
+              courses: ["Mechanics", "Thermodynamics", "Electrical Systems"],
+            },
+          ],
+          students: [
+            { name: "John", age: 20, year: "200 Level" },
+            { name: "Mary", age: 22, year: "300 Level" },
+          ],
+        },
+      ];
+
+      console.log(schoolSystem);
+      const displayInfo = document.getElementById("display");
+
+      schoolSystem.forEach((school, index) => {
+        let containerDiv = document.createElement("div");
+        containerDiv.className = "bg-white p-5 mb-10 rounded-xl";
+        containerDiv.innerHTML = `<div><h1>${school.name}</h1><span>${
+          school.level
+        } |</span><span> 📍 ${school.location}</span></div>
+        <div><h2>Principal: <span>${school.principal.name} (Experience: ${
+          school.principal.experience
+        } years) </span></h2></div>
+
+
+         <div> ${
+           school.teachers
+             ? ` <ul><h2>👨🏽‍🏫 Teachers:</h2> <li>${school.teachers[0].name} - ${school.teachers[0].subject} (${school.teachers[0].yearsOfExp} yrs) </li>
+          <li>${school.teachers[1].name} - ${school.teachers[1].subject} (${school.teachers[1].yearsOfExp} yrs) </li></ul>`
+             : `N/A`
+         } </div>
+           <div>${
+             school.departments
+               ? `<h2>${school.departments[0].name} - ${
+                   school.departments[0].head
+                 }</h2> <ul>${school.departments[0].courses
+                   .map(
+                     (check) =>
+                       `<li class = "list-disc list-inside">${check}</li>`
+                   )
+                   .join("")} </ul>`
+               : ""
+           } </div>
+            
+
+          <ul><h2>👨🏼‍🎓 Students:</h2> ${
+            school.students[0].grade
+              ? `<li>${school.students[0].name} - ${school.students[0].age} (${school.students[0].grade}) </li>
+          <li>${school.students[1].name} - ${school.students[1].age} (${school.students[1].grade}) </li>`
+              : `<li>${school.students[0].name} - ${school.students[0].age} (${school.students[0].year}) </li>
+          <li>${school.students[1].name} - ${school.students[1].age} (${school.students[1].year}) </li>`
+          } </ul>
+          
+           <ul class = "list-disc list-inside">  ${
+             school.subjects
+               ? `<h2>📚 Subjects:</h2> ${school.subjects
+                   .map((search) => `<li> ${search} </li>`)
+                   .join("")} `
+               : ""
+           } 
+            </ul>
+        `;
+        displayInfo.appendChild(containerDiv);
+      });
+    </script>
+  </body>
+</html>

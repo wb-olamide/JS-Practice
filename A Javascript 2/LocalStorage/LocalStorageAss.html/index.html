@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <div>
+      <input
+        type="text"
+        placeholder="Input name"
+        class="px-2 border mr-2"
+        id="nameID"
+      /><input
+        type="text"
+        placeholder="Input department"
+        class="px-2 border mr-2"
+        id="deptID"
+      /><input
+        type="text"
+        placeholder="Input school"
+        class="px-2 border"
+        id="schoolID"
+      />
+      <button
+        id="addBtn"
+        class="px-6 cursor-pointer py-1 rounded-xl bg-green-700"
+      >
+        Add
+      </button>
+
+      <script>
+        const nameInp = document.querySelector("#nameID");
+        const deptInp = document.querySelector("#deptID");
+        const schoolInp = document.querySelector("#schoolID");
+
+        addBtn.addEventListener("click", () => {
+          let details = JSON.parse(localStorage.getItem("saveDetails")) || [];
+
+          details.push({
+            name: nameInp.value,
+            dept: deptInp.value,
+            school: schoolInp.value,
+          });
+          localStorage.setItem("saveDetails", JSON.stringify(details));
+          alert("Student Succesfully Added");
+
+          clearInputs();
+        });
+
+        function clearInputs() {
+          nameInp.value = " ";
+          deptInp.value = " ";
+          schoolInp.value = " ";
+        }
+      </script>
+    </div>
+  </body>
+</html>

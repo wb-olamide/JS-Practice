@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-black">
+    <script>
+      let person = {
+        name: "olamide",
+        gender: "male",
+        complexion: "dark",
+        age: 21,
+        "my zaddy": "Wbee",
+        maritalStatus: "single",
+        school: { name: "Lautech", vc: "Jadesola" },
+        walk() {
+          console.log(`${this.name} is a gee`);
+        },
+        code() {
+          console.log(person.name + "is a coder");
+        },
+        displaySchool() {
+            person.setSchool()
+          console.log(person.school.name);
+          console.log(`My school name is ${this.schoolTwo}`);
+        },
+        setSchool() {
+          // console.log(` `);
+          this.schoolTwo = "SQI";
+        },
+      };
+
+      person.babes = 3;
+    //   person.setSchool();
+      console.log(person);
+      console.log(person["my zaddy"]);
+      
+
+      console.log(person.code());
+      console.log(person.walk());
+      console.log(person.displaySchool());
+    </script>
+  </body>
+</html>

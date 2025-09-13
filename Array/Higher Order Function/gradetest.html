@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Grades Analyzer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 5px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #f2f2f2;
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .highlight {
+        font-weight: bold;
+        color: darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📊 Student Grades Analyzer</h1>
+
+    <input type="text" id="name" placeholder="Student name" />
+    <input type="number" id="grade" placeholder="Grade (0-100)" />
+    <button onclick="addStudent()">Add Student</button>
+
+    <h2>Students</h2>
+    <ul id="studentList"></ul>
+
+    <h2>Summary</h2>
+    <p>Average Grade: <span id="avg" class="highlight">0</span></p>
+    <p>Highest Grade: <span id="high" class="highlight">0</span></p>
+    <p>Lowest Grade: <span id="low" class="highlight">0</span></p>
+
+    <script>
+      let students = [];
+
+      function addStudent() {
+        const name = document.getElementById("name").value.trim();
+        const grade = parseInt(document.getElementById("grade").value);
+
+        if (!name || isNaN(grade) || grade < 0 || grade > 100) {
+          alert("Enter a valid name and grade between 0-100.");
+          return;
+        }
+
+        students.push({ name, grade });
+        renderStudents();
+        calculateStats();
+
+        document.getElementById("name").value = "";
+        document.getElementById("grade").value = "";
+      }
+
+      function renderStudents() {
+        const list = document.getElementById("studentList");
+        list.innerHTML = students.map((s) => `<li>${s.name} - ${s.grade}</li>`);
+      }
+
+      function calculateStats() {
+        const grades = students.map((s) => s.grade);
+        console.log(grades);
+        
+        if (grades.length === 0) {
+          document.getElementById("avg").textContent = 0;
+          document.getElementById("high").textContent = 0;
+          document.getElementById("low").textContent = 0;
+          return;
+        }
+        const avg = (grades.reduce((a, b) => a + b, 0) / grades.length).toFixed(
+          2
+        );
+        const high = Math.max(...grades);
+        const low = Math.min(...grades);
+
+        document.getElementById("avg").textContent = avg;
+        document.getElementById("high").textContent = high;
+        document.getElementById("low").textContent = low;
+      }
+    </script>
+  </body>
+</html>

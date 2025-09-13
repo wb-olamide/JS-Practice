@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-700" id="display">
+    <script>
+      let display = document.getElementById("display");
+
+      let result = localStorage.getItem("studentName");
+      console.log(result);
+
+      let objResult = localStorage.getItem("objNames");
+      let objResu = JSON.parse(objResult);
+      console.log(JSON.parse(objResult)[1]);
+      console.log(objResu[1].name);
+
+      display.innerHTML = objResu[1].name;
+    </script>
+  </body>
+</html>

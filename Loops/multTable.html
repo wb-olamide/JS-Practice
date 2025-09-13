@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <h1 class="mb-10 text-5xl text-black text-center">Multiplcation Table</h1>
+
+    <div class="mb-10 flex justify-center items-center">
+      <span class="mr-5 text-2xl"> Input Number:</span>
+      <input
+        id="firstinp"
+        class="mr-5 border text-xl p-3 w-[200px]"
+        type="text"
+      />
+      <!-- <span class="">To:</span> -->
+      <!-- <input id="secondinp" class="border w-[200px]" type="text" /> -->
+      <button
+        id="btn"
+        class="py-2 px-6 rounded-xl bg-green-800 text-white text-xl"
+      >
+        Run
+      </button>
+      <!-- <button
+        id="clearbtn"
+        class="py-2 px-6 rounded-xl bg-green-800 text-white text-xl"
+      >
+        Clear
+      </button> -->
+    </div>
+    <div id="display" class="flex gap-10 justify-center text-xl">
+      <div id="table1"></div>
+      <div id="table2"></div>
+      <div id="table3"></div>
+      <div id="table4"></div>
+      <div id="table5"></div>
+      <div id="table6"></div>
+      <div id="table7"></div>
+      <div id="table8"></div>
+      <div id="table9"></div>
+      <div id="table10"></div>
+      <div id="table11"></div>
+      <div id="table12"></div>
+    </div>
+    <div class="flex gap-10"></div>
+
+    <script>
+      const displayEl = document.getElementById("display");
+      const firstInp = document.getElementById("firstinp");
+      const secondInp = document.getElementById("secondinp");
+      const tableOne = document.getElementById("table1");
+      const tableTwo = document.getElementById("table2");
+      const tableThree = document.getElementById("table3");
+      const tableFour = document.getElementById("table4");
+      const tableFive = document.getElementById("table5");
+      const tableSix = document.getElementById("table6");
+      const tableSeven = document.getElementById("table7");
+      const tableEight = document.getElementById("table8");
+      const tableNine = document.getElementById("table9");
+      const tableTen = document.getElementById("table10");
+      const tableEleven = document.getElementById("table11");
+      const tableTwelve = document.getElementById("table12");
+      // let clearDisplay = "True";
+
+      // let age = "12"
+      // let name = "Ola"
+      // let myNormalComplexion = 'dark'
+
+      // console.log(myNormalComplexion);
+
+      const btn = document.getElementById("btn");
+      // const clearBtn = document.getElementById("clearbtn");
+
+      // function clearDis() {
+      //   if (clearDisplay == "False") {
+      //     clearDisplay = "False";
+      //     displayEl.innerText = "";
+      //     clearDisplay = "True";
+      //   } else if (clearDisplay == "True") {
+      //     displayEl.innerText = tableOne.innerText;
+      //   }
+      // }
+
+      function multiple() {
+        // displayEl.innerText = firstInp.value;
+        // clearDisplay = "True";
+
+        if (firstInp.value == 1) {
+          // displayEl.innerText = ""
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          // clearDisplay = "False";
+        } else if (firstInp.value == 2) {
+          for (let i = 1; i <= 12; i++) {
+            if ((i == 2, 4)) {
+              continue;
+            }
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+        } else if (firstInp.value == 3) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+        } else if (firstInp.value == 4) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+        } else if (firstInp.value == 5) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+        } else if (firstInp.value == 6) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+        } else if (firstInp.value == 7) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+        } else if (firstInp.value == 7) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEight.innerText += `8 * ${i} = ${8 * i} \n`;
+          }
+        } else if (firstInp.value == 9) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEight.innerText += `8 * ${i} = ${8 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableNine.innerText += `9 * ${i} = ${9 * i} \n`;
+          }
+        } else if (firstInp.value == 10) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEight.innerText += `8 * ${i} = ${8 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableNine.innerText += `9 * ${i} = ${9 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTen.innerText += `10 * ${i} = ${10 * i} \n`;
+          }
+        } else if (firstInp.value == 11) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEight.innerText += `8 * ${i} = ${8 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableNine.innerText += `9 * ${i} = ${9 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTen.innerText += `10 * ${i} = ${10 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEleven.innerText += `11 * ${i} = ${11 * i} \n`;
+          }
+        } else if (firstInp.value == 12) {
+          for (let i = 1; i <= 12; i++) {
+            tableOne.innerText += `1 * ${i} = ${1 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwo.innerText += `2 * ${i} = ${2 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableThree.innerText += `3 * ${i} = ${3 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFour.innerText += `4 * ${i} = ${4 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableFive.innerText += `5 * ${i} = ${5 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSix.innerText += `6 * ${i} = ${6 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableSeven.innerText += `7 * ${i} = ${7 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEight.innerText += `8 * ${i} = ${8 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableNine.innerText += `9 * ${i} = ${9 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTen.innerText += `10 * ${i} = ${10 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableEleven.innerText += `11 * ${i} = ${11 * i} \n`;
+          }
+          for (let i = 1; i <= 12; i++) {
+            tableTwelve.innerText += `12 * ${i} = ${12 * i} \n`;
+          }
+        }
+
+        // for (let i = 1; i <= 12; i++) {
+        //   // const element = array[i];
+        //   // console.log(i);
+        //   //   let e = Number(firstInp.value);
+        //   //   tableOne.innerText += `${firstInp.value} * ${i} = ${e * i} \n`;
+        //   if (firstInp.value >= 3) {
+        //     let e = Number(firstInp.value);
+        //     tableOne.innerText += `${firstInp.value} * ${i} = ${e * i} \n`;
+        //   }
+        // }
+
+        // firstInp.value
+      }
+      // clearBtn.addEventListener("click", clearDis);
+
+      btn.addEventListener("click", multiple);
+      //   btn.addEventListener("click", multiple());
+    </script>
+  </body>
+</html>

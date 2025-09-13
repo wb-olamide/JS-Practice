@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="bg-gray-700">
+    <button onclick="startInterval()">Start</button>
+    <button onclick="stopInterval()">Stop</button>
+
+    <script>
+      // setInterval
+      // 1000ms = 1s
+      //   function greet() {
+      //     console.log("Hello Class");
+      //   }
+
+      //   function startInterval() {
+      //     setInterval(greet, 1000);
+      //   }
+      //   function stopInterval() {
+      //     setTimeout(greet, 1000);
+      //   }
+
+      let interval;
+      let ade;
+
+      function greet() {
+        interval = setInterval(() => {
+          console.log("Hello Class");
+          ade = "bayo";
+        }, 1000);
+      }
+      function startInterval() {
+        greet();
+      }
+
+      function stopInterval() {
+        console.log(interval);
+        console.log(ade);
+
+        clearInterval(interval);
+      }
+      //   setTimeout(greet, 3000);
+
+      // let interval;
+
+      // function greet() {
+      //   interval = setTimeout(() => {
+      //     console.log("Hello Class");
+      //   }, 1000);
+      // }
+      // function startInterval() {
+      //   greet();
+      // }
+
+      // function stopInterval() {
+      //   clearTimeout(interval);
+      // }
+    </script>
+  </body>
+</html>

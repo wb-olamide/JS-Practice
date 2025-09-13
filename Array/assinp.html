@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div class="ml-10 mt-[20px]">
+      <input
+        type="text"
+        id="inputText"
+        class="w-300px h-60px text-xl px-2 border"
+        placeholder="Type here...."
+      />
+      <button
+        id="btn"
+        class="border rounded-xl px-4 py-1.5 text-white bg-green-700"
+      >
+        Add Text
+      </button>
+
+      <div id="display">Lorem</div>
+    </div>
+
+    <script>
+      let inputText = document.getElementById("inputText");
+      let displayEl = document.getElementById("display");
+      let getBtn = document.getElementById("btn");
+      let loremArray = Array(displayEl.innerText);
+      //   loremArray.unshift("Ade");
+      console.log(loremArray);
+      console.log(displayEl.innerText);
+      // displayEl.String(displayEl.innerText).unshift("Alade");
+      let disss = Array(displayEl.innerText);
+      disss.unshift("Ade");
+      disss.unshift("Bayo");
+      disss.unshift("Bolu");
+
+      disss.shift("Ade");
+      // String(disss.innerText).replaceAll(",", " ");
+      let newD = String(disss);
+      console.log(newD.replaceAll(",", " "));
+
+      // console.log(newD.replace("ade", "bayo " ));
+
+      //   let loremArray = [
+      //     // "alade",
+      //     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem ipsa dolorum ipsum dignissimos quia deserunt distinctio cupiditate aliquid ad ea!",
+      //   ];
+      console.log(loremArray.length);
+
+      getBtn.addEventListener("click", () => {
+        // if (inputText.value == " ") {
+        //   displayEl.innerHTML = inputText.value;
+        // }
+
+        // loremArray.unshift(inputText.value);
+        // String(loremArray.innerText.repla)
+
+        loremArray.unshift(inputText.value);
+
+        // displayEl.innerText.replaceAll(",", " ");
+        displayEl.innerText = loremArray;
+        displayEl.innerText = displayEl.innerText.replaceAll(",", " ");
+        inputText.value = " ";
+
+        console.log(loremArray);
+      });
+      //
+      //   console.log(loremArray);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="text">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum illum
+      architecto maxime rem obcaecati repellendus temporibus, magni placeat
+      aspernatur, modi minima saepe quibusdam nostrum tempore assumenda at.
+      Porro, minus debitis! Exercitationem architecto ipsum ipsa veniam nihil
+      reprehenderit nam sint blanditiis consequatur quo ducimus autem tempore
+      quidem quisquam in cumque minima commodi laudantium error deserunt aliquam
+      officia, repellendus quos! Rem pariatur quibusdam sunt itaque blanditiis
+      consequuntur ex ab amet! Non at reprehenderit explicabo laboriosam minima
+      deleniti eum, harum fugit impedit, obcaecati illum, provident optio odio.
+      Voluptates autem magnam consequatur ducimus in quidem eveniet! Eius itaque
+      mollitia distinctio quisquam ipsa error ex?
+    </div>
+    <!-- Srings  Methods and Array Methods -->
+
+    <script>
+      let textReplace = document.getElementById("text");
+      textReplace = document.getElementById("text");
+      // textReplace.innerHTML = textReplace.innerHTML.replaceAll("sit", "sat");
+
+      let studentName = "Adeola";
+      // slice: used to extract some character from a string
+      //   studentName.slice(1, 4);
+      //   console.log(studentName.slice(10, 14));
+      // console.log(studentName.concat(" ", "Olamide"));
+
+      // console.log(studentName.trimEnd());
+      // console.log(studentName.trim());
+      // console.log(studentName.toLowerCase());
+      // console.log(studentName.toUpperCase());
+
+      // console.log(studentName.lastIndexOf("a"));
+
+      // console.log(studentName.length);
+      // console.log(studentName.includes("u"));
+
+      // Array
+      let arrayOfNames = ["Ade", "Sola", "Tope", "Lekan", "Tolu"];
+      // length
+      console.log(arrayOfNames.length);
+
+      // PUsH: add items to arrayOfNames
+      console.log(arrayOfNames);
+
+      arrayOfNames.push("Olamide");
+      console.log(arrayOfNames);
+
+      // adds items to the front
+      // unshift
+      arrayOfNames.unshift("Ayinde");
+      console.log(arrayOfNames);
+
+      // Pop
+      arrayOfNames.pop("Olamide");
+      console.log(arrayOfNames);
+
+      // shift
+      arrayOfNames.shift();
+      console.log(arrayOfNames);
+
+      // splice
+      arrayOfNames.splice(2, 0, "jadesola", "queen");
+      console.log(arrayOfNames);
+
+      console.log(arrayOfNames.indexOf("jadesola"));
+
+      // shift
+    </script>
+  </body>
+</html>

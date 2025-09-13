@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <body class="bg-gray-400">
+    <div class="mt-5">
+      <div class="text-2xl">
+        <span id="currenthr"></span>:<span id="currentmin"></span>:<span
+          id="currentsec"
+        ></span>
+      </div>
+      <input type="text" class="border" placeholder="input hours" id="hours" />
+      <input
+        type="text"
+        class="border"
+        placeholder=" input minutes"
+        id="mins"
+      />
+      <button id="alarm" class="bg-gray-500 rounded-xl px-4 py-1">
+        Set Alarm
+      </button>
+
+      <div class="text-xl">
+        <span>Alarm:</span>
+        <span id="alarmhr" class=""></span>:<span id="alarmmins"></span>
+      </div>
+    </div>
+
+    <script>
+      let currenthr = document.getElementById("currenthr");
+      let currentmin = document.getElementById("currentmin");
+      let currentsec = document.getElementById("currentsec");
+      let alarmhr = document.getElementById("alarmhr");
+      let alarmmins = document.getElementById("alarmmins");
+
+      let hrs = document.getElementById("hours");
+      let mins = document.getElementById("mins");
+
+      let interval;
+      let intevalTime;
+      function getdate() {
+        //   console.log("gello");
+        setTimeout(() => {
+          date = new Date();
+          currenthr.innerHTML = date.getHours();
+          currentmin.innerHTML = date.getMinutes();
+          currentsec.innerHTML = date.getSeconds();
+          // console.log("hello");
+          let datemin = Number(currentmin.innerHTML) * 60 * 1000;
+          console.log(currentmin.innerHTML);
+
+          datemin;
+          console.log(datemin);
+
+          alarmmins.innerText = mins.value;
+          alarmhr.innerText = hrs.value;
+          let minutescount = Number(mins.value) * 60 * 1000;
+          console.log(minutescount);
+          let hourscount = Number(hrs.value) * 60 * 60;
+          console.log(hourscount * 60 * 60);
+
+          console.log(minutescount - datemin);
+          intevalTime = minutescount - datemin;
+          console.log(intevalTime);
+        alert("typee shii");
+          
+        }, intevalTime);
+
+        // alert("typee shii");
+      }
+      //   interval = setTimeout(getdate, 2000);
+      function danggg() {
+        getdate();
+        // let datemin = Number(currentmin.innerHTML) * 60 * 1000;
+        // console.log(currentmin.innerHTML);
+
+        // datemin;
+        // console.log(datemin);
+
+        // alarmmins.innerText = mins.value;
+        // alarmhr.innerText = hrs.value;
+        // let minutescount = Number(mins.value) * 60 * 1000;
+        // console.log(minutescount);
+        // let hourscount = Number(hrs.value) * 60 * 60;
+        // console.log(hourscount * 60 * 60);
+
+        // console.log(minutescount - datemin);
+        // intevalTime = minutescount - datemin;
+        // console.log(intevalTime);
+
+        // Mainn
+
+        // clearInterval(interval);
+        // setInterval(getdate, 5000);
+        // setTimeout(getdate, intevalTime);
+        // alert("hola");
+      }
+
+      alarm.addEventListener("click", danggg);
+      //   console.log(intevalTime);
+    //   setTimeout(danggg, intevalTime);
+
+      //   alarm.addEventListener("click", () => {
+      //     getdate();
+      //     let datemin = Number(currentmin.innerHTML) * 60 * 1000;
+      //     console.log(currentmin.innerHTML);
+
+      //     datemin;
+      //     console.log(datemin);
+
+      //     alarmmins.innerText = mins.value;
+      //     alarmhr.innerText = hrs.value;
+      //     let minutescount = Number(mins.value) * 60 * 1000;
+      //     console.log(minutescount);
+      //     let hourscount = Number(hrs.value) * 60 * 60;
+      //     console.log(hourscount * 60 * 60);
+
+      //     console.log(minutescount - datemin);
+      //     let intevalTime = minutescount - datemin;
+      //     console.log(intevalTime);
+      //     // clearInterval(interval);
+      //     setInterval(getdate, 5000);
+      //     // setTimeout(getdate, intevalTime);
+      //     // alert("hola");
+      //   });
+
+      //   setInterval(getdate, 1000);
+
+      // getdate();
+      // let datemin = Number(currentmin.innerHTML) * 60 * 1000;
+      // console.log(currentmin.innerHTML);
+
+      // datemin;
+      // console.log(datemin);
+
+      // alarmmins.innerText = mins.value;
+      // alarmhr.innerText = hrs.value;
+      // let minutescount = Number(mins.value) * 60 * 1000;
+      // console.log(minutescount);
+      // let hourscount = Number(hrs.value) * 60 * 60;
+      // console.log(hourscount * 60 * 60);
+
+      // console.log(minutescount - datemin);
+      // let intevalTime = minutescount - datemin;
+      // console.log(intevalTime);
+
+      // clearInterval(getdate, intevalTime);
+    </script>
+  </body>
+</html>
