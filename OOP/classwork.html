@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Person {
+        // name;
+        // age;
+        constructor(name, age) {
+          (this.name = name), (this.age = age);
+        }
+        getDetails() {
+          console.log(`Name:${this.name}, Age:${this.age}`);
+        }
+      }
+
+      const person = new Person("Ade", 22);
+      person.getDetails();
+
+      class Teacher extends Person {
+        constructor(name, age, subject) {
+          super(name, age), (this.subject = subject);
+        }
+        getDetails() {
+          console.log(
+            `Name:${this.name}, Age:${this.age}, Subject:${this.subject}`
+          );
+        }
+      }
+
+      const teacher = new Teacher("Mr Tunde", 42, "Agric");
+      teacher.getDetails();
+
+      class Student extends Person {
+        constructor(name, age, grade) {
+          super(name, age), (this.grade = grade);
+        }
+        getDetails() {
+          console.log(
+            `Name:${this.name}, Age:${this.age}, Grade:${this.grade}`
+          );
+        }
+      }
+
+      
+      const student = new Student("Bayo", 42, "A");
+      student.getDetails();
+    </script>
+  </body>
+</html>
