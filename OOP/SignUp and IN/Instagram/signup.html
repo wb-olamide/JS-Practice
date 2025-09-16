@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Sign Up</title>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-sm w-full">
+      <!-- Main Sign Up Card -->
+      <div class="bg-white border border-gray-300 rounded-sm p-8 mb-4">
+        <!-- Instagram Logo -->
+        <div class="text-center mb-8">
+          <h1
+            class="text-3xl font-bold instagram-gradient bg-clip-text text-blue-500 mb-4"
+          >
+            Instagram
+          </h1>
+          <p class="text-gray-600 font-semibold text-sm">
+            Sign up to see photos and videos from your friends.
+          </p>
+        </div>
+
+        <!-- Sign Up Form -->
+        <form id="signupForm" class="space-y-3">
+          <input id="email" type="email" placeholder="Email" class="inpStyle" />
+
+          <input
+            id="firstName"
+            type="text"
+            placeholder="firstName"
+            class="inpStyle"
+          />
+
+          <input
+            id="lastName"
+            type="text"
+            placeholder="lastName"
+            class="inpStyle"
+          />
+
+          <input
+            id="password"
+            type="password"
+            placeholder="Password"
+            class="inpStyle"
+          />
+
+          <button
+            id="signup-Btn"
+            class="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-sm text-sm mt-4"
+          >
+            Sign up
+          </button>
+        </form>
+
+        <!-- Terms -->
+        <div class="text-center mt-6">
+          <p id="error-text" class="text-red-900 mb-3"></p>
+          <p class="text-xs text-gray-500 leading-4">
+            By signing up, you agree to our
+            <a href="#" class="text-gray-900 font-semibold">Terms</a>,
+            <a href="#" class="text-gray-900 font-semibold">Privacy Policy</a>
+            and
+            <a href="#" class="text-gray-900 font-semibold">Cookies Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Login Link Card -->
+      <div class="bg-white border border-gray-300 rounded-sm p-6 text-center">
+        <p class="text-sm text-gray-900">
+          Have an account?
+          <a href="#" class="text-blue-500 font-semibold hover:text-blue-700"
+            >Log in</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <script src="./signup.js"></script>
+  </body>
+</html>
