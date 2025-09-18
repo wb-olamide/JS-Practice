@@ -3,9 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/src/output.css" />
   </head>
-  <body>
-    <div><h1>Dashboard</h1></div>
+
+  <body class="bg-gray-100 p-6 font-sans">
+    <h1 class="text-2xl font-bold mb-2">Dashboard</h1>
+    <p class="mb-4">
+      Welcome, <span id="username" class="font-semibold text-blue-600"></span>
+    </p>
+    <button
+      id="logout-btn"
+      class="mb-6 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+    >
+      Logout
+    </button>
+
+    <!-- Post display -->
+    <div class="flex justify-between">
+      <div class="container mx-auto flex gap-6 max-w-3xl max-h-[90vh]">
+        <!-- Feeds -->
+        <div
+          id="feeds"
+          class="flex-2 flex flex-col gap-6 overflow-y-auto w-4/7"
+        >
+          <!-- Example Post -->
+        </div>
+      </div>
+
+      <!-- Add Post -->
+      <div
+        class="flex-1 bg-white border border-gray-300 rounded-md p-5 h-fit shadow w-1/7"
+      >
+        <h2 class="text-lg font-semibold text-center mb-4">Add New Post</h2>
+        <form id="formEl" class="flex flex-col gap-3">
+          <input
+            id="caption"
+            type="text"
+            placeholder="Caption..."
+            required
+            class="p-2 border border-gray-300 rounded bg-gray-50 text-sm"
+          />
+          <input
+            id="image"
+            type="url"
+            placeholder="Image URL..."
+            required
+            class="p-2 border border-gray-300 rounded bg-gray-50 text-sm"
+          />
+          <button
+            id="submitBtn"
+            type="submit"
+            class="bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600"
+          >
+            Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="./dashboard.js"></script>
   </body>
 </html>
