@@ -7,11 +7,27 @@ const image = document.getElementById("image");
 const formEl = document.getElementById("formEl");
 const logoutBtn = document.getElementById("logout-btn");
 
+const localDiv = document.getElementById("localDiv");
+const localimageImp = document.getElementById("local-imageImp");
+const imgPreview = document.getElementById("img-preview");
+let clicker;
+
+localDiv.addEventListener("change", (e) => {
+  clicker = URL.createObjectURL(e.target.files[0]);
+  imgPreview.setAttribute("src", clicker);
+  console.log(clicker);
+});
+
 const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 usernameEl.textContent = `${user.firstName}`;
 const savedPosts = JSON.parse(localStorage.getItem("savedPosts")) || [];
 console.log(savedPosts);
+
+if (!token) {
+  alert("Session Expired! Redirecting to login");
+  window.location.href = "./login.html";
+}
 
 // const checkLogin = () => {
 //   console.log(user);
@@ -81,9 +97,11 @@ const postContent = () => {
   postObj = {
     author: `${user.firstName} ${user.lastName}`,
     caption: caption.value,
-    image: image.value,
+    image: clicker,
     date: new Date().toLocaleTimeString(),
   };
+  console.log(clicker);
+
   savedPosts.unshift(postObj);
   localStorage.setItem("savedPosts", JSON.stringify(savedPosts));
   window.location.href = "./dashboard.html";
@@ -103,12 +121,12 @@ savedPosts.forEach((post, index) => {
               alt="user"
               class="rounded-full w-8 h-8"
             />
-            <span class="font-bold text-sm">${post.author} </span>
+            <span class="font-bold text-sm">${post.author}</span>
           </div>
           <img
             src="${post.image}"
             alt="post"
-            class="w-full h-[500px]"
+            class="w-full h-auto"
           />
           <div class="p-3 font-semibold text-sm">❤️ 95 likes</div>
           <div class="px-3 pb-2 text-sm">

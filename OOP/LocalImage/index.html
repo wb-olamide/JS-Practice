@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="/src/output.css" />
+  </head>
+  <body>
+    <div id="image">
+      <input id="image-inp" type="file" placeholder="skii" class="border" />
+      <button id="btn" class="px-4 py-1 rounded-xl border">Run</button>
+
+      <img id="img-preview" />
+    </div>
+
+    <script>
+      const imageGet = document.getElementById("image");
+      const imgPrev = document.getElementById("img-preview");
+      const imageInp = document.getElementById("image-inp");
+
+      imageInp.addEventListener("change", (e) => {
+        const clicker = URL.createObjectURL(e.target.files[0]);
+        console.log(clicker);
+        imgPrev.setAttribute("src", clicker);
+      });
+    </script>
+  </body>
 </html>

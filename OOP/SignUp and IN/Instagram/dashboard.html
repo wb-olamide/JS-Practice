@@ -5,24 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
     <link rel="stylesheet" href="/src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=align_flex_center"
+    />
   </head>
 
   <body class="bg-gray-100 p-6 font-sans">
-    <h1 class="text-2xl font-bold mb-2">Dashboard</h1>
-    <p class="mb-4">
-      Welcome, <span id="username" class="font-semibold text-blue-600"></span>
-    </p>
-    <button
-      id="logout-btn"
-      class="mb-6 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-    >
-      Logout
-    </button>
+    <div class="flex justify-between">
+      <div>
+        <h1 class="text-2xl font-bold mb-2">Dashboard</h1>
+        <p class="mb-4 text-xl font-medium">
+          Welcome,
+          <span id="username" class="font-semibold text-blue-600"></span>
+        </p>
+      </div>
+      <div>
+        <button
+          id="logout-btn"
+          class="mb-6 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
 
     <!-- Post display -->
-    <div class="flex justify-between">
+    <div class="flex justify-between xl:gap-60 xl:w-[90%] m-auto w-full">
       <div class="container mx-auto flex gap-6 max-w-3xl max-h-[90vh]">
         <!-- Feeds -->
+
         <div
           id="feeds"
           class="flex-2 flex flex-col gap-6 overflow-y-auto w-4/7"
@@ -48,9 +60,21 @@
             id="image"
             type="url"
             placeholder="Image URL..."
-            required
             class="p-2 border border-gray-300 rounded bg-gray-50 text-sm"
           />
+          <div
+            id="localDiv"
+            class="flex w-[250px] h-[250px] border-dashed border overflow-hidden justify-center items-center relative"
+          >
+            <span class="material-symbols-outlined"> align_flex_center </span>
+
+            <input
+              id="local-imageImp"
+              type="file"
+              class="p-2 border justify-center absolute inset-0 opacity-0 border-gray-300 rounded bg-gray-50 text-sm"
+            />
+            <img class="z-2" id="img-preview" />
+          </div>
           <button
             id="submitBtn"
             type="submit"
@@ -65,3 +89,4 @@
     <script src="./dashboard.js"></script>
   </body>
 </html>
+zz
